@@ -1,0 +1,90 @@
+{
+  "ecg": {
+    "title": "ECG device",
+    "subtitle": "Connect your portable ECG over Bluetooth and watch the live waveform.",
+    "connectionTitle": "Device connection",
+    "connectionHelp": "Turn the device on and tap Connect. Keep it close to the computer.",
+    "connectionHelpWindows": "On Windows, Chrome often cannot open a GATT link to AIECG. Use the desktop agent below — it is the reliable path.",
+    "connect": "Connect ECG",
+    "connectAny": "Choose any Bluetooth device",
+    "connected": "Connected",
+    "disconnectBle": "Disconnect",
+    "finishSegment": "Finish",
+    "segmentDone": "Segment saved",
+    "scrollStrip": "Scroll recording",
+    "scrollHint": "Drag the chart or the slider to browse the full recording",
+    "photoTitle": "ECG photo",
+    "photoHelp": "A picture of paper ECG, a monitor screen, or a single-lead strip.",
+    "photoPick": "Choose photo",
+    "photoAnalyze": "Analyze photo",
+    "photoBusy": "Analyzing photo…",
+    "photoNeedFile": "Choose an image first.",
+    "photoNotEcg": "No ECG is visible in this photo",
+    "photoErr": {
+      "AI_NOT_CONFIGURED": "AI is not configured on the server (Anthropic or OpenAI key).",
+      "INVALID_INPUT": "Could not read the image. Use JPG or PNG.",
+      "LLM_UPSTREAM_ERROR": "Analysis is temporarily unavailable. Try again.",
+      "generic": "Could not analyze the photo."
+    },
+    "needChrome": "Open this page in Chrome or Edge on a computer with Bluetooth.",
+    "insecureContext": "Bluetooth is not available on this link. Open the app in Chrome or Edge on this computer.",
+    "tipPower": "Turn the device on and keep it nearby until Connected appears.",
+    "tipWindows": "Do not pair the device in your computer’s Bluetooth settings — connect only from this page.",
+    "tipChrome": "Close WeChat / the Python agent first; only one app can hold the BLE link.",
+    "err": {
+      "not_found": "Device not found. Turn it on nearby and do not pair it in your computer’s Bluetooth settings.",
+      "security": "Open the app in the browser on this computer.",
+      "gatt": "Could not connect. Close other apps that may be using the device, then try again.",
+      "busy": "Bluetooth is busy. Wait a second and try again.",
+      "unsupported": "Open this page in Chrome or Edge on a computer with Bluetooth.",
+      "cancelled": "Connection cancelled.",
+      "generic": "Could not connect. Try again."
+    },
+    "ble": {
+      "unsupported": "Bluetooth unavailable",
+      "idle": "Not connected",
+      "connecting": "Connecting…",
+      "connected": "Connected",
+      "disconnected": "Disconnected",
+      "error": "Connection failed"
+    },
+    "linkTitle": "Desktop agent (fallback)",
+    "linkTitleRecommended": "Desktop agent (recommended on Windows)",
+    "linkHelp": "If browser Bluetooth fails, create a code and run the Python agent on this PC.",
+    "linkHelpWindows": "Create a pair code, then run the command in a terminal. Keep this page open to see the live waveform.",
+    "createCode": "Create pair code",
+    "expires": "Expires at {{at}}",
+    "agentAfter": "After the agent prints “connected”, refresh devices on this page — the list fills only after a successful claim/bind.",
+    "devicesTitle": "Linked devices",
+    "refresh": "Refresh",
+    "noDevices": "No devices yet. Connect the device with the button above.",
+    "unlink": "Unlink",
+    "liveTitle": "Live waveform",
+    "liveRecording": "Recording",
+    "liveWaiting": "Waiting for signal",
+    "waitingSignal": "Waiting for a signal. Connect the device and touch the electrodes.",
+    "waitingExplain": "Connected. Keep holding the electrodes — the waveform should appear in a few seconds.",
+    "noNotifiesYet": "Connected, but no signal yet. Keep holding the electrodes or reconnect.",
+    "lastNotify": "BLE notifies: {{n}} · last len={{len}} samples={{samples}} hex={{hex}}",
+    "liveHint": "Waveform appears when multi-sample BLE frames arrive (handshake ACKs are ignored).",
+    "screenAction": "Screen this strip",
+    "screenBusy": "Screening…",
+    "screenHelp": "Hold electrodes for at least 20 seconds, then screen. Single-lead only — not a clinic ECG.",
+    "screenNeedDevice": "Link a device first.",
+    "screenNeedStrip": "Need a longer, cleaner strip (about 8 seconds or more).",
+    "screenHr": "{{bpm}} bpm",
+    "screenDisclaimer": "This is not a medical diagnosis and does not replace a clinician.",
+    "rhythm": {
+      "regular": "regular timing",
+      "irregular": "irregular timing",
+      "unknown": "rhythm unclear"
+    },
+    "quality": {
+      "adequate": "signal OK",
+      "poor": "poor signal"
+    }
+  },
+  "profile": {
+    "navEcg": "ECG device"
+  }
+}

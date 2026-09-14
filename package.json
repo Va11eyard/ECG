@@ -1,0 +1,10 @@
+{
+  "name": "ecg",
+  "private": true,
+  "workspaces": ["web"],
+  "scripts": {
+    "dev": "npm run dev -w ecg-web",
+    "build": "npm run build -w ecg-web",
+    "preview": "npm run preview -w ecg-web"
+  }
+}
