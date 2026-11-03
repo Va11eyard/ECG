@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10141a" />
+  <title>AIECG Portable ECG</title>
+  <link rel="stylesheet" href="./src/hero.css" />
+</head>
+<body>
+  <main class="trace-track">
+    <section class="trace-stage" aria-label="AIECG live signal study">
+      <div class="night-set" aria-hidden="true"></div>
+      <div class="day-set" aria-hidden="true">
+        <div class="paper-art"></div>
+        <span class="ghost-type">AIECG</span>
+        <svg class="baseline-art" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true"><path d="M0 224 C 140 208, 265 238, 405 224 S 690 208, 845 230 S 1115 212, 1200 226" fill="none"/></svg>
+        <svg class="pulse-frame" viewBox="0 0 1200 110" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
+          <defs><path id="qrs" d="M0 0 l7 -6 l5 34 l6 -44 l5 52 l6 -38 l4 2" fill="none"/></defs>
+          <use href="#qrs" x="40" y="18"/><use href="#qrs" x="150" y="10"/><use href="#qrs" x="330" y="22"/><use href="#qrs" x="520" y="12"/><use href="#qrs" x="700" y="20"/><use href="#qrs" x="860" y="8"/><use href="#qrs" x="1010" y="18"/><use href="#qrs" x="1140" y="12"/>
+        </svg>
+        <div class="pulse-type"><span>Every</span><span>beat</span></div>
+      </div>
+      <canvas id="ecg-trace"></canvas>
+      <div class="foreground-art" aria-hidden="true"><i class="pulse-dot pulse-dot-one"></i><i class="pulse-dot pulse-dot-two"></i><i class="pulse-dot pulse-dot-three"></i></div>
+      <div class="trace-input" tabindex="0" role="region" aria-label="Signal view. Drag to change pace, scroll or pinch to zoom the trace. Arrow keys adjust, plus and minus zoom, Home resets."></div>
+      <div class="hero-signature"><span class="hero-kicker">AIECG / PORTABLE ECG</span><h1>AIECG</h1><a class="hero-cta" href="#the-details">See how it works</a></div>
+      <a class="story-arrow" href="#the-details" aria-label="Explore the details"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v15m-6-6 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>THE DETAILS</span></a>
+      <div class="trace-credit"><span>LIVE SIGNAL</span><strong>Drawn in canvas</strong></div>
+      <div class="loading-status" role="status"><span class="loading-title">AIECG</span><span class="loading-label">READING THE SIGNAL</span><span class="loader"></span><span class="sr-only">Loading the live signal view</span></div>
+      <div class="fallback" hidden>Signal view unavailable in this browser</div>
+    </section>
+  </main>
+  <div class="sl">
+    <section class="sl-spotlight" id="the-details" tabindex="-1" aria-labelledby="details-heading">
+      <div class="sl-panel">
+        <p class="sl-panel__eyebrow" id="details-heading">One device. The whole picture.</p>
+        <div class="sl-stage">
+          <div class="sl-cards" aria-hidden="true">
+            <canvas class="sl-card sl-card--1" data-rotation="-10" width="420" height="630"></canvas>
+            <canvas class="sl-card sl-card--2" data-rotation="10" width="420" height="630"></canvas>
+            <canvas class="sl-card sl-card--3" data-rotation="8" width="420" height="630"></canvas>
+            <canvas class="sl-card sl-card--4" data-rotation="-8" width="420" height="630"></canvas>
+          </div>
+          <div class="sl-list" aria-label="Explore what AIECG does">
+            <button class="sl-item" type="button"><span class="sl-label"><span class="sl-label__default">Pocket ECG</span><span class="sl-label__alt" aria-hidden="true">Pocket ECG</span></span></button>
+            <button class="sl-item" type="button"><span class="sl-label"><span class="sl-label__default">Live signal</span><span class="sl-label__alt" aria-hidden="true">Live signal</span></span></button>
+            <button class="sl-item" type="button"><span class="sl-label"><span class="sl-label__default">Guided capture</span><span class="sl-label__alt" aria-hidden="true">Guided capture</span></span></button>
+            <button class="sl-item" type="button"><span class="sl-label"><span class="sl-label__default">Instant analysis</span><span class="sl-label__alt" aria-hidden="true">Instant analysis</span></span></button>
+            <button class="sl-item" type="button"><span class="sl-label"><span class="sl-label__default">Doctor-ready report</span><span class="sl-label__alt" aria-hidden="true">Doctor-ready report</span></span></button>
+            <button class="sl-item" type="button"><span class="sl-label"><span class="sl-label__default">Private by design</span><span class="sl-label__alt" aria-hidden="true">Private by design</span></span></button>
+          </div>
+        </div>
+        <p class="sl-panel__note">A familiar trace, rewritten for the pocket.<br />Hover a title to see the signal in a different state.</p>
+      </div>
+    </section>
+    <section class="sl-outro" aria-labelledby="outro-heading">
+      <p class="sl-outro__eyebrow">AIECG PORTABLE ECG</p>
+      <h2 id="outro-heading">Built to be<br /><em>clear in every beat</em></h2>
+      <p>A pocket ECG that pairs with your phone over Bluetooth, shows the signal as it happens and turns a capture into a report a clinician can read.</p>
+      <a class="sl-outro__link" href="#" data-deploy-slot="live-view-url">Explore the live view</a>
+      <span class="sl-outro__disclaimer">AIECG is a screening companion. It does not replace diagnosis by a clinician.</span>
+      <span class="sl-outro__credit">Product study · Type set in League Gothic, Anton, Caveat and DM Sans under the SIL Open Font License</span>
+    </section>
+  </div>
+  <script type="module" src="./src/hero.js"></script>
+</body>
+</html>
