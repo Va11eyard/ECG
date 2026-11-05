@@ -1,26 +1,8 @@
 [
   {
-    "file": "public/fonts/league-gothic.woff",
-    "url": "https://media.prettysites.io/products/liberty-walk-f40/v1/fonts/league-gothic.woff",
-    "bytes": 19548,
-    "sha256": "9e7726e2d42ed412e308d089ecffe3fd211fb56b4b273a3caeaa2a175fba744f"
-  },
-  {
-    "file": "public/fonts/Anton-Regular.ttf",
-    "url": "https://media.prettysites.io/products/liberty-walk-f40/v1/fonts/Anton-Regular.ttf",
-    "bytes": 130324,
-    "sha256": "fd9301f2837c99df2be07cc7f0be66e9470f5354d8fcf1606027c67fcd637a53"
-  },
-  {
     "file": "public/fonts/Caveat-SemiBold.ttf",
     "url": "https://media.prettysites.io/products/liberty-walk-f40/v1/fonts/Caveat-SemiBold.ttf",
     "bytes": 251816,
     "sha256": "e5be0a7ef2eb97414937cb70d079c8c9fb2e472cf74eab5b8fe9dfa2f6fb2704"
-  },
-  {
-    "file": "public/fonts/DMSans-Medium.ttf",
-    "url": "https://media.prettysites.io/products/liberty-walk-f40/v1/fonts/DMSans-Medium.ttf",
-    "bytes": 48308,
-    "sha256": "376427b5322148d8de1e03f263bcca4935a2d60ba71d9f94f4947ab664c711ae"
   }
 ]
