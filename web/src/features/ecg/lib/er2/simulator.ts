@@ -49,7 +49,12 @@ export class SimTransport implements Er2Transport {
       leadOffAfterSec: opts.leadOffAfterSec ?? Number.POSITIVE_INFINITY,
       ...opts,
     } as Required<SimOptions>;
-    this.deviceMs = this.opts.skewMs;
+    // Skew and drift live in the waveform itself: the beat train starts
+    // lagging by skewMs (B's first R lands skewMs later in its own stream)
+    // and its rate is stretched by driftPpm, so downstream sync sees them
+    // exactly like it would on two physical crystals.
+    this.phase = (((-this.opts.skewMs / 1000) * (this.opts.hr / 60)) % 1 + 1) % 1;
+    this.deviceMs = 0;
     this.lead = "I";
   }
 
@@ -72,11 +77,11 @@ export class SimTransport implements Er2Transport {
     const count = (SAMPLES_PER_POLL * fs) / 125;
     const mv = new Float32Array(count);
     for (let i = 0; i < count; i++) {
-      const perBeat = fs * (60 / hr);
+      const perBeat = fs * (60 / hr) * (1 + driftPpm * 1e-6);
       this.phase = (this.phase + (1 / perBeat) * (1 + 0.03 * Math.sin(this.phase * TAU))) % 1;
       mv[i] = beat(this.lead, this.phase) + (Math.random() - 0.5) * 0.008;
     }
-    this.deviceMs += (count / fs) * 1000 * (1 + driftPpm * 1e-6);
+    this.deviceMs += (count / fs) * 1000;
     const leadOff = this.deviceMs >= this.opts.leadOffAfterSec * 1000;
     const payload = new Uint8Array(20 + count * 2);
     const dv = new DataView(payload.buffer);

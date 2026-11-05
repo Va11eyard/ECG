@@ -14,6 +14,7 @@ export type RtEvent = {
   leadOn: boolean;
   mv: Float32Array;
   tDeviceMs: number;
+  fs: number;
 };
 
 export type SourceState = "disconnected" | "connecting" | "streaming" | "error";
@@ -166,7 +167,7 @@ export class Er2Device {
       this.samplesSeen += sampleCount;
       this.deviceMs += (sampleCount / this.fs) * 1000;
       this.trackFs();
-      const event: RtEvent = { hr, battery, leadOn, mv, tDeviceMs: this.deviceMs };
+      const event: RtEvent = { hr, battery, leadOn, mv, tDeviceMs: this.deviceMs, fs: this.fs };
       this.rtHandlers.forEach((cb) => cb(event));
     }
   }
