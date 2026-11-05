@@ -24,7 +24,7 @@ export function Er2LiveDashboard({ sim }: { sim: boolean }) {
   const session = useEr2Session(sim);
   const [exportOpen, setExportOpen] = useState(false);
 
-  const dualReady = session.hasB && session.syncInfo.state !== "independent";
+  const dualReady = session.hasB && session.syncInfo.state === "locked";
   const mode = dualReady ? session.mode : 1;
   const lanes = LANES_BY_MODE[mode];
   const hrFor = (key: LaneKey): number | undefined =>

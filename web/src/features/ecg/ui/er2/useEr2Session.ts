@@ -108,12 +108,11 @@ export function useEr2Session(sim: boolean) {
       if (label === "A") {
         deviceA.current = d;
         watch("A", d);
-        lanes.current.I.fs = 125;
         sync.solo();
       } else {
         deviceB.current = d;
         watch("B", d);
-        sync.solo();
+        sync.pair();
       }
       await d.requestConnect();
     },

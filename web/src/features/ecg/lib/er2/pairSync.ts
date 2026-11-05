@@ -101,6 +101,11 @@ export class PairSync {
     this.state = "solo";
   }
 
+  pair(): void {
+    this.soloMode = false;
+    this.state = "searching";
+  }
+
   pushA(e: RtEvent): void {
     append(this.a, e);
   }
