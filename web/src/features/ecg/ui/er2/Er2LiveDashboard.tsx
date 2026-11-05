@@ -50,7 +50,7 @@ export function Er2LiveDashboard({ sim }: { sim: boolean }) {
             {t(SYNC_LABEL[session.syncInfo.state] ?? "er2.sync_searching")}
             {session.syncInfo.state === "locked" && ` · ${Math.round(session.syncInfo.offsetMs)} ms`}
           </span>
-          <a className="text-(--sub) hover:text-(--ink)" href="/">
+          <a className="text-(--sub) hover:text-(--ink)" href={`${import.meta.env.VITE_SITE_URL ?? ''}/`}>
             {t("er2.back_to_site")}
           </a>
         </div>

@@ -16,3 +16,12 @@ document.querySelector('.story-arrow').addEventListener('click', (event) => {
 });
 mountDots(document.querySelector('#dots'), { reduced: reducedMotion.matches });
 hero.classList.add('is-ready');
+const APP_URL = import.meta.env.VITE_APP_URL ?? '';
+const SLOTS = {
+  'live-view-url': `${APP_URL}/?view=er2`,
+  'login-url': `${APP_URL}/login.html`,
+};
+for (const a of document.querySelectorAll('[data-deploy-slot]')) {
+  const target = SLOTS[a.dataset.deploySlot];
+  if (target) a.setAttribute('href', target);
+}

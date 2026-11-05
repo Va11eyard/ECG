@@ -96,7 +96,7 @@ export function LoginView() {
           </button>
         </form>
         <p className="mt-5 text-center text-[12px] text-(--sub)">
-          <a className="underline decoration-(--line) underline-offset-4 hover:text-(--ink)" href="/">
+          <a className="underline decoration-(--line) underline-offset-4 hover:text-(--ink)" href={`${import.meta.env.VITE_SITE_URL ?? ''}/`}>
             {t("login.to_site")}
           </a>
         </p>

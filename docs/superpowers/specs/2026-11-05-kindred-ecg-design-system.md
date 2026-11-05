@@ -48,6 +48,7 @@ The Kindred prompt is edited as follows; everything not listed here keeps the Ki
 
 - Nav: inline SVG pulse-glyph brand mark + "AIECG" wordmark (weight 600, 15px); links `Device · Live view · Analysis · Clinics · Contact` (`#3a3a3a`, hover `#000`); black **Sign In** pill on the right → `/login` (section 3).
 - Copy block at Kindred's position: `h1` line 1 grey "Every heartbeat", line 2 ink "made visible" (weight 500, −0.035em, `clamp(38px,3.75vw,68px)`); subline: "A pocket ECG that pairs with two LEPU ER2-C recorders over Bluetooth and turns their signal into a six-lead picture a clinician can read." (max-width 380px); CTA pill "Open the live view" (deploy-slot, as today) with the signal-red underglow.
+- **Cross-surface wiring**: every `data-deploy-slot` anchor resolves at startup — `live-view-url` → `${VITE_APP_URL}/?view=er2`, `login-url` → `${VITE_APP_URL}/login.html` (site side); the app's back links use `VITE_SITE_URL`. Defaults are same-origin, so a single-domain deploy needs no env; split deploys and local dev (site 4173 ↔ app 4174) set the two vars. Verified by click-through.
 - **Capability strip replaces partner logos** (bottom row): six muted text marks, same sizing/rhythm as Kindred's logos but honest — `LEPU ER2-C`, `DUAL DEVICE`, `6-LEAD MATRIX`, `25 / 50 MM/S`, `10 MM/MV`, `BLE · NO INSTALL`. No fictional partners, no invented endorsements.
 
 ### 2.3 Spotlight re-skin (all-light)
