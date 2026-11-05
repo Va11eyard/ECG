@@ -1,0 +1,26 @@
+/* Kindred-ECG design system tokens — docs/superpowers/specs/2026-11-05-kindred-ecg-design-system.md */
+:root {
+  --bg: #f7f7f5;
+  --card: #ffffff;
+  --ink: #111111;
+  --dot: #0d0d0d;
+  --mute: #9a9a9a;
+  --sub: #7b7b7b;
+  --line: #e2e6eb;
+  --signal: #b2362d;
+  --signal-l: #faeeed;
+  --ok: #2e7550;
+  --ok-c: #3c8c63;
+  --ok-l: #edf5f0;
+  --warn: #8a5f10;
+  --warn-c: #c58a1e;
+  --warn-l: #faf4e6;
+  --bad: #a8362e;
+  --bad-c: #c2463d;
+  --bad-l: #faeeed;
+  --paper: #fffdfd;
+  --grid-minor: #f5dada;
+  --grid-major: #e8b9b9;
+  --radius-card: 12px;
+  --radius-pill: 999px;
+}
