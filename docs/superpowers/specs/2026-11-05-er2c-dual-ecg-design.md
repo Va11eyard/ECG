@@ -90,7 +90,7 @@ Single-device mode skips this entirely.
 
 ## 6. Landing site update (`site/`)
 
-Copy-only, no structural change: strings + visible text updated so the hero credit line, spotlight note, and outro body mention the ER2-C (DuoEK) support, dual-device capture, and the derived 6-lead matrix. `rows` stay six; wording adjusted. Disclaimer unchanged. The deploy-slot CTA mechanism untouched.
+Superseded by the design program in `2026-11-05-kindred-ecg-design-system.md`: the landing is rebuilt on the Kindred dot-matrix design (signal-red underglow, all-light sections), and the dashboard adopts the same token system with the Ритм red-paper ECG strips replacing the generic grid described in section 5. Functionality in sections 3-5 and 7-9 of this document is unchanged.
 
 ## 7. Testing strategy
 
