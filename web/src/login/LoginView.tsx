@@ -4,6 +4,8 @@ import { renderDotBand } from "./dotBand";
 
 const AUTH_URL = import.meta.env.VITE_AUTH_URL as string | undefined;
 const AUTH_FLAG = 'aiecg.auth';
+const DEMO_EMAIL = 'demo@aiecg.kz';
+const DEMO_PASSWORD = 'aiecg2026';
 
 function grantAccess(): void {
   localStorage.setItem(AUTH_FLAG, JSON.stringify({ at: Date.now(), mode: AUTH_URL ? 'server' : 'demo' }));
@@ -44,10 +46,18 @@ export function LoginView() {
 
   const submit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
-    if (!AUTH_URL) return;
     setBusy(true);
     setError("");
     try {
+      if (!AUTH_URL) {
+        if (email.trim().toLowerCase() === DEMO_EMAIL && password === DEMO_PASSWORD) {
+          grantAccess();
+          window.location.href = nextTarget();
+          return;
+        }
+        setError(t("login.bad_credentials"));
+        return;
+      }
       const res = await fetch(AUTH_URL, {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -114,15 +124,8 @@ export function LoginView() {
       </div>
 
       {!AUTH_URL && (
-        <div className="relative z-10 mt-5 rounded-full border border-(--line) bg-(--card) px-4 py-2 text-[12px] text-(--warn-c)">
-          {t("login.demo_notice")}{" "}
-          <a
-            className="underline underline-offset-4"
-            href={nextTarget()}
-            onClick={() => grantAccess()}
-          >
-            {t("login.continue")}
-          </a>
+        <div className="relative z-10 mt-5 rounded-full border border-(--line) bg-(--card) px-4 py-2 text-center text-[12px] text-(--warn-c)">
+          {t("login.demo_notice")}
         </div>
       )}
 

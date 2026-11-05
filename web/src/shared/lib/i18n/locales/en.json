@@ -138,7 +138,6 @@
     "bad_credentials": "Wrong email or password",
     "network_error": "Network error, try again",
     "to_site": "Back to site",
-    "demo_notice": "Auth is not configured in this build.",
-    "continue": "Continue to dashboard"
+    "demo_notice": "Demo access — sign in with demo@aiecg.kz · aiecg2026"
   }
 }

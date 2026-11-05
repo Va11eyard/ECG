@@ -24,7 +24,7 @@ body{background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;mi
 .cta::before{content:'';position:absolute;left:10%;right:10%;bottom:-6px;height:16px;border-radius:50%;background:var(--signal);filter:blur(9px);opacity:.85;transition:all .3s}
 .cta:hover::before{opacity:1;filter:blur(12px);bottom:-9px}
 .caps{position:absolute;z-index:3;bottom:clamp(28px,6vh,64px);left:0;right:0;display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(18px,3vw,44px);padding:0 16px;color:#8d8d8d;font-size:clamp(11px,.95vw,14px);font-weight:500;letter-spacing:.06em}
-.story-arrow{position:absolute;z-index:3;bottom:5.5%;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;flex-direction:column;text-decoration:none;color:var(--ink)}
+.story-arrow{position:absolute;z-index:3;bottom:calc(clamp(28px,6vh,64px) + 84px);left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;flex-direction:column;text-decoration:none;color:var(--ink)}
 .story-arrow svg{width:48px;height:48px;padding:12px;border:1px solid #cfcbc4;border-radius:50%;transition:transform .25s,background .25s;background:#f7f7f5cc}
 .story-arrow:hover svg{transform:translateY(5px);background:#fff}
 .story-arrow span{font-size:9px;letter-spacing:.2em}
