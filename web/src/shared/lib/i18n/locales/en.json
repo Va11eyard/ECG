@@ -127,5 +127,17 @@
     "disclaimer": "AIECG is a screening companion. It does not replace diagnosis by a clinician.",
     "switch_live": "AIECG live",
     "switch_er2": "ER2 dashboard"
+  },
+  "login": {
+    "title": "Sign in",
+    "subtitle": "Clinic and partner access",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "bad_credentials": "Wrong email or password",
+    "network_error": "Network error, try again",
+    "to_site": "Back to site",
+    "demo_notice": "Auth is not configured in this build.",
+    "continue": "Continue to dashboard"
   }
 }
