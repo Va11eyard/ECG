@@ -126,7 +126,8 @@
     "close": "Close",
     "disclaimer": "AIECG is a screening companion. It does not replace diagnosis by a clinician.",
     "switch_live": "AIECG live",
-    "switch_er2": "ER2 dashboard"
+    "switch_er2": "ER2 dashboard",
+    "sign_out": "Sign out"
   },
   "login": {
     "title": "Sign in",

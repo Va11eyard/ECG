@@ -3,6 +3,16 @@ import { useTranslation } from "react-i18next";
 import { renderDotBand } from "./dotBand";
 
 const AUTH_URL = import.meta.env.VITE_AUTH_URL as string | undefined;
+const AUTH_FLAG = 'aiecg.auth';
+
+function grantAccess(): void {
+  localStorage.setItem(AUTH_FLAG, JSON.stringify({ at: Date.now(), mode: AUTH_URL ? 'server' : 'demo' }));
+}
+
+function nextTarget(): string {
+  const next = new URLSearchParams(window.location.search).get('next') ?? '';
+  return next.startsWith('/') ? next : '/?view=er2';
+}
 
 function PulseMark() {
   return (
@@ -44,7 +54,8 @@ export function LoginView() {
         body: JSON.stringify({ email, password }),
       });
       if (res.ok) {
-        window.location.href = "/?view=er2";
+        grantAccess();
+        window.location.href = nextTarget();
         return;
       }
       setError(t("login.bad_credentials"));
@@ -105,7 +116,11 @@ export function LoginView() {
       {!AUTH_URL && (
         <div className="relative z-10 mt-5 rounded-full border border-(--line) bg-(--card) px-4 py-2 text-[12px] text-(--warn-c)">
           {t("login.demo_notice")}{" "}
-          <a className="underline underline-offset-4" href="/?view=er2">
+          <a
+            className="underline underline-offset-4"
+            href={nextTarget()}
+            onClick={() => grantAccess()}
+          >
             {t("login.continue")}
           </a>
         </div>

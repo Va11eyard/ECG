@@ -126,7 +126,8 @@
     "close": "Закрыть",
     "disclaimer": "AIECG — скрининговый помощник. Он не заменяет диагноз врача.",
     "switch_live": "AIECG эфир",
-    "switch_er2": "ER2 панель"
+    "switch_er2": "ER2 панель",
+    "sign_out": "Выйти"
   },
   "login": {
     "title": "Вход",

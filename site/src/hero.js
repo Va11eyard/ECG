@@ -18,7 +18,7 @@ mountDots(document.querySelector('#dots'), { reduced: reducedMotion.matches });
 hero.classList.add('is-ready');
 const APP_URL = import.meta.env.VITE_APP_URL ?? '';
 const SLOTS = {
-  'live-view-url': `${APP_URL}/?view=er2`,
+  'live-view-url': `${APP_URL}/login.html`,
   'login-url': `${APP_URL}/login.html`,
 };
 for (const a of document.querySelectorAll('[data-deploy-slot]')) {

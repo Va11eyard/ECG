@@ -126,7 +126,8 @@
     "close": "Жабу",
     "disclaimer": "AIECG — скрининг көмекшісі. Ол дәрігер диагнозын алмастырмайды.",
     "switch_live": "AIECG тікелей",
-    "switch_er2": "ER2 панелі"
+    "switch_er2": "ER2 панелі",
+    "sign_out": "Шығу"
   },
   "login": {
     "title": "Кіру",

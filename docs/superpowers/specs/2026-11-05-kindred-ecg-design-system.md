@@ -68,6 +68,8 @@ The Kindred prompt is edited as follows; everything not listed here keeps the Ki
 
 ## 3. Login (`web/`, route `/login`)
 
+**Entry flow (owner decision 2026-11-05):** the landing is the public surface; the product is entered through login. All landing CTAs (`live-view-url`, `login-url`) lead to `login.html`; the app shell checks a `aiecg.auth` localStorage flag set by the login page and redirects to `login.html?next=…` when absent; the `next` parameter accepts same-origin paths only; Sign out clears the flag and returns to login. `?sim=1` bypasses the guard for development.
+
 - Full-viewport `--bg` page, centered card (`--card`, 12px, hairline border, 380px): pulse-glyph mark, "Sign in" headline (Inter 600), email + password fields (1px `--line` borders, 10px radius, focus border `--ink`), black Sign In pill with signal-red underglow, muted secondary line linking back to the landing.
 - Behind the canvas, a single **dot-matrix ECG accent band** runs along the bottom edge (the hero engine in static, reduced-motion-friendly form, single pose) — same visual language without duplicating the full hero.
 - Behavior: `VITE_AUTH_URL` env slot — when set, credentials POST to it (InLab-compatible contract decided at integration); when unset, the page renders in demo mode with an amber notice "Auth is not configured in this build" and a Continue-to-dashboard bypass. No fake authentication is created.

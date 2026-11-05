@@ -9,12 +9,28 @@ import "@/app/styles/globals.css";
 
 type View = "aiecg" | "er2";
 
+const AUTH_FLAG = "aiecg.auth";
+
+function hasAccess(): boolean {
+  try {
+    return localStorage.getItem(AUTH_FLAG) !== null;
+  } catch {
+    return false;
+  }
+}
+
 function App() {
   const { t } = useTranslation();
-  const [view, setView] = useState<View>(() =>
-    new URLSearchParams(window.location.search).get("view") === "er2" ? "er2" : "aiecg",
-  );
-  const sim = new URLSearchParams(window.location.search).has("sim");
+  const params = new URLSearchParams(window.location.search);
+  const sim = params.has("sim");
+  const [view, setView] = useState<View>(() => (params.get("view") === "er2" ? "er2" : "aiecg"));
+  const authed = sim || hasAccess();
+  if (!authed) {
+    window.location.replace(
+      `login.html?next=${encodeURIComponent(window.location.pathname + window.location.search)}`,
+    );
+    return null;
+  }
   return (
     <>
       {view === "aiecg" ? <EcgLiveView /> : <Er2LiveDashboard sim={sim} />}
@@ -36,6 +52,16 @@ function App() {
             {t(key)}
           </button>
         ))}
+        <button
+          type="button"
+          onClick={() => {
+            localStorage.removeItem(AUTH_FLAG);
+            window.location.href = "login.html";
+          }}
+          className="px-4 py-2 text-[12px] font-medium text-(--sub) transition-colors hover:text-(--bad-c)"
+        >
+          {t("er2.sign_out")}
+        </button>
       </nav>
     </>
   );
