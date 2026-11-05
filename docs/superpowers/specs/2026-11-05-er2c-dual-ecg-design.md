@@ -35,7 +35,7 @@ Same framing. `cmd` distinguishes payloads:
 - `RT_DATA = 0x03`: 20-byte param block + wave samples. Param: `hr` (u16 @0), `sysFlag` @2, `battery` % @3, `recordTime` u32 @4, `runStatus` @8 with `leadOn = (b8 & 0x07) != 0x07`. Wave: int16 LE samples.
 - `RT_RRI = 0x07` response: RRI intervals with unix time (optional secondary stream).
 
-**Correction to the baseline notes**: `0x07` is the RRI-stream command, not the wave-stream starter. The official demo sends **no wave-start command**: the device streams `RT_DATA (0x03)` automatically once notifications are subscribed. We subscribe, send `GET_INFO` once, and parse `RT_DATA` frames; `RT_RRI` is optional and off by default.
+**Correction to the baseline notes**: `0x07` is the RRI-stream command, not the wave-stream starter. The wave stream is **polled**: the host re-sends `RT_DATA (0x03)` with payload `0x7D` (samples per poll) every 1000 ms — ported from `UniversalBleCmd.getRtData()` and the demo's 1 s `RtTask`. We subscribe, send `GET_INFO` once, then poll `RT_DATA`; `RT_RRI` is optional and off by default.
 
 **Sample conversion** (exactly as specified and as in `Er1DataController.byteTomV`):
 ```
