@@ -26,6 +26,18 @@ export type Er2Transport = {
   onNotify(cb: (chunk: Uint8Array) => void): void;
 };
 
+export interface EcgSource {
+  kind: "er2" | "sim";
+  label: "A" | "B";
+  name: string;
+  fs: number;
+  param: RtParam | null;
+  onRt(cb: (e: RtEvent) => void): () => void;
+  onStatus(cb: (s: StatusEvent) => void): () => void;
+  requestConnect(): Promise<void>;
+  stop(): void;
+}
+
 const SERVICE_UUID = "14839ac4-7d7e-415c-9a42-167340cf2339";
 const WRITE_UUID = "8b00ace7-eb0b-49b0-bbe9-9aee0a26e1a3";
 const NOTIFY_UUID = "0734594a-a8e7-4b1a-a6b1-cd5243059a57";
@@ -38,7 +50,7 @@ export function detectFs(samplesInWindow: number, windowSec: number): 125 | 250 
 type RtHandler = (e: RtEvent) => void;
 type StatusHandler = (s: StatusEvent) => void;
 
-export class Er2Device {
+export class Er2Device implements EcgSource {
   kind = "er2" as const;
   label: "A" | "B";
   name = "ER2";

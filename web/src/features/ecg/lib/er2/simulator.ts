@@ -32,6 +32,7 @@ export type SimOptions = {
   skewMs?: number;
   driftPpm?: number;
   leadOffAfterSec?: number;
+  lead?: "I" | "II";
 };
 
 // Emits raw notify chunks (real ER2 frames, deliberately fragmented) so the
@@ -55,7 +56,7 @@ export class SimTransport implements Er2Transport {
     // exactly like it would on two physical crystals.
     this.phase = (((-this.opts.skewMs / 1000) * (this.opts.hr / 60)) % 1 + 1) % 1;
     this.deviceMs = 0;
-    this.lead = "I";
+    this.lead = this.opts.lead ?? "I";
   }
 
   setLead(lead: "I" | "II"): void {
