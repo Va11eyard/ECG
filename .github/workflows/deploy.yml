@@ -32,6 +32,7 @@ jobs:
           VITE_APP_URL: /ECG/app
       - name: Build app
         run: |
+          rm -f package-lock.json
           npm install
           npm run build -w web -- --base=/ECG/app/
         env:
