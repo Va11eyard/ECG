@@ -32,7 +32,7 @@ jobs:
           VITE_APP_URL: /ECG/app
       - name: Build app
         run: |
-          npm ci
+          npm install
           npm run build -w web -- --base=/ECG/app/
         env:
           VITE_SITE_URL: /ECG
