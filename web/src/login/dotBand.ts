@@ -68,18 +68,18 @@ export function renderDotBand(canvas: HTMLCanvasElement): void {
   fx.fillStyle = "#ffffff";
   fx.fillRect(0, 0, cols, rows);
   fx.strokeStyle = "#000000";
-  fx.lineWidth = step * 1.1;
+  fx.lineWidth = 1.15;
   fx.lineJoin = "round";
   fx.lineCap = "round";
   const seconds = 6;
   const hr = 72;
   const pxPerSec = W / seconds;
-  const mid = rows * 0.55;
+  const mid = rows * 0.5;
   fx.beginPath();
   for (let x = 0; x <= W; x += step / 2) {
     const t = x / pxPerSec;
     const p = ((t * (hr / 60)) % 1 + 1) % 1;
-    const y = mid - beat(p) * rows * 0.34;
+    const y = mid - beat(p) * rows * 0.3;
     if (x === 0) fx.moveTo(x / step, y);
     else fx.lineTo(x / step, y);
   }
