@@ -34,7 +34,8 @@ jobs:
         run: |
           rm -f package-lock.json
           npm install
-          npm run build -w web -- --base=/ECG/app/
+          cd web
+          npx vite build --config vite.pages.config.ts --base=/ECG/app/
         env:
           VITE_SITE_URL: /ECG
       - name: Assemble
