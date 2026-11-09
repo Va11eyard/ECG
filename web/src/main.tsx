@@ -27,7 +27,7 @@ function App() {
   const authed = sim || hasAccess();
   if (!authed) {
     window.location.replace(
-      `login.html?next=${encodeURIComponent(window.location.pathname + window.location.search)}`,
+      `${import.meta.env.BASE_URL}login.html?next=${encodeURIComponent(window.location.pathname + window.location.search)}`,
     );
     return null;
   }
@@ -56,7 +56,7 @@ function App() {
           type="button"
           onClick={() => {
             localStorage.removeItem(AUTH_FLAG);
-            window.location.href = "login.html";
+            window.location.href = `${import.meta.env.BASE_URL}login.html`;
           }}
           className="px-4 py-2 text-[12px] font-medium text-(--sub) transition-colors hover:text-(--bad-c)"
         >

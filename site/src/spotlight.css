@@ -1,4 +1,4 @@
-@font-face{font-family:Caveat;src:url('/fonts/Caveat-SemiBold.ttf');font-weight:600}
+@font-face{font-family:Caveat;src:url('../fonts/Caveat-SemiBold.ttf');font-weight:600}
 .sl{--sl-paper:#f7f7f5;--sl-ink:#111111;--sl-panel:#ffffff;--sl-panel-ink:#111111;--sl-glow:#b2362d;--sl-line:#e2e6eb;--sl-card-w:clamp(90px,15vw,210px);background:var(--sl-paper);color:var(--sl-ink);font-family:Inter,system-ui,sans-serif}
 .sl section{position:relative;min-height:100svh;padding:1.5rem;overflow:hidden}
 .sl-spotlight{outline:none}

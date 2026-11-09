@@ -13,7 +13,7 @@ function grantAccess(): void {
 
 function nextTarget(): string {
   const next = new URLSearchParams(window.location.search).get('next') ?? '';
-  return next.startsWith('/') ? next : '/?view=er2';
+  return next.startsWith('/') ? next : `${import.meta.env.BASE_URL}?view=er2`;
 }
 
 function PulseMark() {
